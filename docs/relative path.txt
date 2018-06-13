@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/12266525/how-can-i-use-relative-paths-to-external-response-files-for-soapui-mockservice

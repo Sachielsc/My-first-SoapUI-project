@@ -95,7 +95,7 @@ propTestStep.setPropertyValue("Total", size.toString())
 counter = propTestStep.getPropertyValue("Count").toString() //counter variable contains iteration number
 counter = counter.toInteger() //
 
-next = (counter > size-2? 0: counter+1) //set the next value
+next = (counter >= size-1? 0: counter+1) //set the next value
 
 // OBTAINING THE DATA YOU NEED
 Cell d = sheet1.getCell(0,counter) // getCell(column,row) //obtains user
@@ -125,7 +125,7 @@ else if (counter==0)
 else
 {
 	propTestStep.setPropertyValue("StopLoop", "F")
-}</script></con:config></con:testStep><con:testStep type="properties" name="Property - Looper" id="521c30a8-9f09-450d-8bdb-6e2817af3aa6"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>name</con:name><con:value xsi:nil="true"/></con:property><con:property><con:name>Total</con:name><con:value xsi:nil="true"/></con:property><con:property><con:name>Count</con:name><con:value>0</con:value></con:property><con:property><con:name>Next</con:name><con:value xsi:nil="true"/></con:property><con:property><con:name>StopLoop</con:name><con:value xsi:nil="true"/></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="put - update the created pet" id="eebd683b-b481-45a7-9205-d73ebfa09b35"><con:settings/><con:config service="http://petstore.swagger.io" resourcePath="/v2/pet" methodName="put" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="put - update the created pet" id="832c0b45-a5c2-42f0-93ba-59198b4f078d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request>{
+}</script></con:config></con:testStep><con:testStep type="properties" name="Property - Looper" id="521c30a8-9f09-450d-8bdb-6e2817af3aa6"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>name</con:name><con:value xsi:nil="true"/></con:property><con:property><con:name>Total</con:name><con:value>4</con:value></con:property><con:property><con:name>Count</con:name><con:value>0</con:value></con:property><con:property><con:name>Next</con:name><con:value xsi:nil="true"/></con:property><con:property><con:name>StopLoop</con:name><con:value xsi:nil="true"/></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="put - update the created pet" id="eebd683b-b481-45a7-9205-d73ebfa09b35"><con:settings/><con:config service="http://petstore.swagger.io" resourcePath="/v2/pet" methodName="put" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="put - update the created pet" id="832c0b45-a5c2-42f0-93ba-59198b4f078d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request>{
   "id": 3000,
   "category": {
     "id": 0,
