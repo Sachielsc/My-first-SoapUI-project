@@ -78,8 +78,14 @@ import jxl.write.*
 // DECLARE THE VARIABLES
 def myTestCase = context.testCase //myTestCase contains the test case
 def counter,next,previous,size //Variables used to handle the loop and to move inside the file
- 
-Workbook workbook1 = Workbook.getWorkbook(new File("C:\\Users\\Admin\\Desktop\\repos\\my first soupUI-Swagger project\\data\\dog_names.xls")) //file containing the data
+
+// using a relative path:
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def dataFileDir = groovyUtils.projectPath + "\\data\\dog_names.xls"
+Workbook workbook1 = Workbook.getWorkbook(new File(dataFileDir))
+// using an absolute path:
+//Workbook workbook1 = Workbook.getWorkbook(new File("C:\\Users\\Admin\\Desktop\\repos\\my first soupUI-Swagger project\\data\\dog_names.xls"))
+
 Sheet sheet1 = workbook1.getSheet(0) //save the first sheet in sheet1
 size = sheet1.getRows().toInteger() //get the number of rows, each row is a data set
 
