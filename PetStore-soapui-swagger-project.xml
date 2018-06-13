@@ -79,73 +79,47 @@ import jxl.write.*
 def myTestCase = context.testCase //myTestCase contains the test case
 def counter,next,previous,size //Variables used to handle the loop and to move inside the file
  
-Workbook workbook1 = Workbook.getWorkbook(new File("C:\\Users\\Admin\\Desktop\\repos\\my first soupUI-Swagger project\\data\\dataFile.xls")) //file containing the data
+Workbook workbook1 = Workbook.getWorkbook(new File("C:\\Users\\Admin\\Desktop\\repos\\my first soupUI-Swagger project\\data\\dog_names.xls")) //file containing the data
 Sheet sheet1 = workbook1.getSheet(0) //save the first sheet in sheet1
 size = sheet1.getRows().toInteger() //get the number of rows, each row is a data set
 
 propTestStep = myTestCase.getTestStepByName("Property - Looper") // get the Property TestStep object
- 
 propTestStep.setPropertyValue("Total", size.toString())
- 
+
 counter = propTestStep.getPropertyValue("Count").toString() //counter variable contains iteration number
- 
 counter = counter.toInteger() //
- 
-next = (counter &amp;gt; size-2? 0: counter+1) //set the next value
- 
+
+next = (counter > size-2? 0: counter+1) //set the next value
+
 // OBTAINING THE DATA YOU NEED
- 
-Cell u = sheet1.getCell(0,counter) // getCell(column,row) //obtains user
- 
-Cell p = sheet1.getCell(1,counter) // obtains password
- 
+Cell d = sheet1.getCell(0,counter) // getCell(column,row) //obtains user
 workbook1.close() //close the file
- 
+
 ////////////////////////////////////
- 
-usr = u.getContents()
- 
-pass = p.getContents()
- 
-propTestStep.setPropertyValue("user", usr) //the value is saved in the property
- 
-propTestStep.setPropertyValue("pass", pass) //the value is saved in the property
- 
+
+dogName = d.getContents() 
+propTestStep.setPropertyValue("name", dogName) //the value is saved in the property
 propTestStep.setPropertyValue("Count", next.toString()) //increase Count value
  
 next++ //increase next value
- 
+
 propTestStep.setPropertyValue("Next", next.toString()) //set Next value on the properties step
  
 //Decide if the test has to be run again or not
- 
 if (counter == size-1)
- 
 {
- 
-propTestStep.setPropertyValue("StopLoop", "T")
- 
-log.info "Setting the stoploop property now..."
- 
+	propTestStep.setPropertyValue("StopLoop", "T")
+	log.info "Setting the stoploop property now..."
 }
- 
 else if (counter==0)
- 
 {
- 
-def runner = new com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner(testRunner.testCase, null)
- 
-propTestStep.setPropertyValue("StopLoop", "F")
- 
+	def runner = new com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner(testRunner.testCase, null)
+	propTestStep.setPropertyValue("StopLoop", "F")
 }
- 
 else
- 
 {
- 
-propTestStep.setPropertyValue("StopLoop", "F")
- 
-}</script></con:config></con:testStep><con:testStep type="properties" name="Property - Looper" id="521c30a8-9f09-450d-8bdb-6e2817af3aa6"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>name</con:name><con:value>doggie(updated)</con:value></con:property><con:property><con:name>Total</con:name><con:value/></con:property><con:property><con:name>Count</con:name><con:value>0</con:value></con:property><con:property><con:name>Next</con:name><con:value/></con:property><con:property><con:name>StopLoop</con:name></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="put - update the created pet" id="eebd683b-b481-45a7-9205-d73ebfa09b35"><con:settings/><con:config service="http://petstore.swagger.io" resourcePath="/v2/pet" methodName="put" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="put - update the created pet" id="832c0b45-a5c2-42f0-93ba-59198b4f078d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request>{
+	propTestStep.setPropertyValue("StopLoop", "F")
+}</script></con:config></con:testStep><con:testStep type="properties" name="Property - Looper" id="521c30a8-9f09-450d-8bdb-6e2817af3aa6"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>name</con:name><con:value/></con:property><con:property><con:name>Total</con:name><con:value/></con:property><con:property><con:name>Count</con:name><con:value>0</con:value></con:property><con:property><con:name>Next</con:name><con:value/></con:property><con:property><con:name>StopLoop</con:name><con:value/></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="put - update the created pet" id="eebd683b-b481-45a7-9205-d73ebfa09b35"><con:settings/><con:config service="http://petstore.swagger.io" resourcePath="/v2/pet" methodName="put" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="put - update the created pet" id="832c0b45-a5c2-42f0-93ba-59198b4f078d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request>{
   "id": 3000,
   "category": {
     "id": 0,
