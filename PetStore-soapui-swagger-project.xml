@@ -106,11 +106,13 @@ workbook1.close() //close the file
 dogName = d.getContents() 
 propTestStep.setPropertyValue("name", dogName) //the value is saved in the property
 propTestStep.setPropertyValue("Count", next.toString()) //increase Count value
- 
 next++ //increase next value
-
 propTestStep.setPropertyValue("Next", next.toString()) //set Next value on the properties step
- 
+
+////////////////////////////////////
+
+log.info ("Here we have a dog named as " + propTestStep.getPropertyValue("name"))
+
 //Decide if the test has to be run again or not
 if (counter == size-1)
 {
@@ -120,12 +122,14 @@ if (counter == size-1)
 else if (counter==0)
 {
 	def runner = new com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner(testRunner.testCase, null)
+	log.info "Start looping for the first time..."
 	propTestStep.setPropertyValue("StopLoop", "F")
 }
 else
 {
+	log.info "Ready to begin another loop..."
 	propTestStep.setPropertyValue("StopLoop", "F")
-}</script></con:config></con:testStep><con:testStep type="properties" name="Property - Looper" id="521c30a8-9f09-450d-8bdb-6e2817af3aa6"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>name</con:name><con:value xsi:nil="true"/></con:property><con:property><con:name>Total</con:name><con:value>4</con:value></con:property><con:property><con:name>Count</con:name><con:value>0</con:value></con:property><con:property><con:name>Next</con:name><con:value xsi:nil="true"/></con:property><con:property><con:name>StopLoop</con:name><con:value xsi:nil="true"/></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="put - update the created pet" id="eebd683b-b481-45a7-9205-d73ebfa09b35"><con:settings/><con:config service="http://petstore.swagger.io" resourcePath="/v2/pet" methodName="put" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="put - update the created pet" id="832c0b45-a5c2-42f0-93ba-59198b4f078d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request>{
+}</script></con:config></con:testStep><con:testStep type="properties" name="Property - Looper" id="521c30a8-9f09-450d-8bdb-6e2817af3aa6"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>name</con:name><con:value xsi:nil="true"/></con:property><con:property><con:name>Total</con:name><con:value xsi:nil="true"/></con:property><con:property><con:name>Count</con:name><con:value>0</con:value></con:property><con:property><con:name>Next</con:name><con:value xsi:nil="true"/></con:property><con:property><con:name>StopLoop</con:name><con:value xsi:nil="true"/></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="put - update the created pet" id="eebd683b-b481-45a7-9205-d73ebfa09b35"><con:settings/><con:config service="http://petstore.swagger.io" resourcePath="/v2/pet" methodName="put" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="put - update the created pet" id="832c0b45-a5c2-42f0-93ba-59198b4f078d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request>{
   "id": 3000,
   "category": {
     "id": 0,
@@ -148,13 +152,14 @@ def runner
 propTestStep = myTestCase.getTestStepByName("Property - Looper") // get the Property TestStep
 endLoop = propTestStep.getPropertyValue("StopLoop")
  
-if (endLoop.toString() == "T" || endLoop.toString()=="True" || endLoop.toString()=="true")
+if (endLoop.toString() == "T")
 {
 	log.info ("Exit Groovy Data Source Looper")
 	assert true
 }
 else
 {
+	log.info ("A new loop begins...")
 	testRunner.gotoStepByName("data driver") // do the looping
 }</script></con:config></con:testStep><con:testStep type="groovy" name="reset looper properties" id="0b8969f5-1ac7-42be-a6c4-efa7ed663c0e"><con:settings/><con:config><script>def myTestCase = context.testCase //myTestCase contains the test case
 
