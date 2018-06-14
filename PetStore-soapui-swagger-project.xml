@@ -75,9 +75,13 @@ import com.eviware.soapui.support.XmlHolder
 import jxl.*
 import jxl.write.*
 
+// Database types
+boolean hasHeaders = true
+def counter = (hasHeaders ? 1:0)
+
 // DECLARE THE VARIABLES
 def myTestCase = context.testCase //myTestCase contains the test case
-def counter,next,previous,size //Variables used to handle the loop and to move inside the file
+def next,previous,size //Variables used to handle the loop and to move inside the file
 
 // using a relative path:
 def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
@@ -113,7 +117,7 @@ propTestStep.setPropertyValue("Next", next.toString()) //set Next value on the p
 
 log.info ("Here we have a dog named as " + propTestStep.getPropertyValue("name"))
 
-//Decide if the test has to be run again or not
+// Decide if the test has to be run again or not
 if (counter == size-1)
 {
 	propTestStep.setPropertyValue("StopLoop", "T")
