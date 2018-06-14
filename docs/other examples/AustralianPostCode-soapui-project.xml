@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5d83a727-2c5c-4bd8-87ab-166173f8e030" activeEnvironment="Default" name="AustralianPostCode" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="2.3.0 2018-03-06T16:28:42Z" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9bdf7314-b83f-4ed1-be9e-53226de94545" wsaVersion="NONE" name="AustralianPostCodeSoap" type="wsdl" bindingName="{http://www.webserviceX.NET}AustralianPostCodeSoap" soapVersion="1_1" anonymous="optional" definition="http://www.webservicex.net/AustralianPostCode.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://www.webservicex.net/AustralianPostCode.asmx?WSDL"><con:part><con:url>http://www.webservicex.net/AustralianPostCode.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.webserviceX.NET" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.webserviceX.NET" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Australian Postcode ,Location Web service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.webserviceX.NET">
+      <s:element name="GetAustralianPostCodeByLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAustralianPostCodeByLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAustralianPostCodeByLocationResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAustralianLocationByPostCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAustralianLocationByPostCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAustralianLocationByPostCodeResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAustralianPostCodeByLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAustralianPostCodeByLocation"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianPostCodeByLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAustralianPostCodeByLocationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAustralianLocationByPostCode"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAustralianLocationByPostCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianPostCodeByLocationHttpGetIn">
+    <wsdl:part name="Location" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianPostCodeByLocationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeHttpGetIn">
+    <wsdl:part name="PostCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianPostCodeByLocationHttpPostIn">
+    <wsdl:part name="Location" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianPostCodeByLocationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeHttpPostIn">
+    <wsdl:part name="PostCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:portType name="AustralianPostCodeSoap">
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <wsdl:documentation>Get Australian Postcode by partial / full Location Name</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianPostCodeByLocationSoapIn"/>
+      <wsdl:output message="tns:GetAustralianPostCodeByLocationSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <wsdl:documentation>Get Australian Location by partial / full Postcode</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianLocationByPostCodeSoapIn"/>
+      <wsdl:output message="tns:GetAustralianLocationByPostCodeSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AustralianPostCodeHttpGet">
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <wsdl:documentation>Get Australian Postcode by partial / full Location Name</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianPostCodeByLocationHttpGetIn"/>
+      <wsdl:output message="tns:GetAustralianPostCodeByLocationHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <wsdl:documentation>Get Australian Location by partial / full Postcode</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianLocationByPostCodeHttpGetIn"/>
+      <wsdl:output message="tns:GetAustralianLocationByPostCodeHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AustralianPostCodeHttpPost">
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <wsdl:documentation>Get Australian Postcode by partial / full Location Name</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianPostCodeByLocationHttpPostIn"/>
+      <wsdl:output message="tns:GetAustralianPostCodeByLocationHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <wsdl:documentation>Get Australian Location by partial / full Postcode</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianLocationByPostCodeHttpPostIn"/>
+      <wsdl:output message="tns:GetAustralianLocationByPostCodeHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AustralianPostCodeSoap" type="tns:AustralianPostCodeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <soap:operation soapAction="http://www.webserviceX.NET/GetAustralianPostCodeByLocation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <soap:operation soapAction="http://www.webserviceX.NET/GetAustralianLocationByPostCode" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AustralianPostCodeSoap12" type="tns:AustralianPostCodeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <soap12:operation soapAction="http://www.webserviceX.NET/GetAustralianPostCodeByLocation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <soap12:operation soapAction="http://www.webserviceX.NET/GetAustralianLocationByPostCode" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AustralianPostCodeHttpGet" type="tns:AustralianPostCodeHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <http:operation location="/GetAustralianPostCodeByLocation"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <http:operation location="/GetAustralianLocationByPostCode"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AustralianPostCodeHttpPost" type="tns:AustralianPostCodeHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <http:operation location="/GetAustralianPostCodeByLocation"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <http:operation location="/GetAustralianLocationByPostCode"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AustralianPostCode">
+    <wsdl:documentation>Australian Postcode ,Location Web service</wsdl:documentation>
+    <wsdl:port name="AustralianPostCodeSoap" binding="tns:AustralianPostCodeSoap">
+      <soap:address location="http://www.webservicex.net/AustralianPostCode.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="AustralianPostCodeSoap12" binding="tns:AustralianPostCodeSoap12">
+      <soap12:address location="http://www.webservicex.net/AustralianPostCode.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="AustralianPostCodeHttpGet" binding="tns:AustralianPostCodeHttpGet">
+      <http:address location="http://www.webservicex.net/AustralianPostCode.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="AustralianPostCodeHttpPost" binding="tns:AustralianPostCodeHttpPost">
+      <http:address location="http://www.webservicex.net/AustralianPostCode.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ReadingTestVM:8088/mockAustralianPostCodeSoap</con:endpoint><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint></con:endpoints><con:operation id="9bcb2da6-39ee-47cd-a57e-a9d10acb63cd" isOneWay="false" action="http://www.webserviceX.NET/GetAustralianLocationByPostCode" name="GetAustralianLocationByPostCode" bindingOperationName="GetAustralianLocationByPostCode" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2986322c-f4ae-4bff-890d-943c39f018a4" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ReadingTestVM:8088/mockAustralianPostCodeSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetAustralianLocationByPostCode>\r
+         <!--Optional:-->\r
+         <web:PostCode>?</web:PostCode>\r
+      </web:GetAustralianLocationByPostCode>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/GetAustralianLocationByPostCode"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="aa464db6-1bb2-47a8-9724-5c4dfbb8324b" isOneWay="false" action="http://www.webserviceX.NET/GetAustralianPostCodeByLocation" name="GetAustralianPostCodeByLocation" bindingOperationName="GetAustralianPostCodeByLocation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9a1eb0a7-712f-4ae6-a31a-b1f70cf22d1a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetAustralianPostCodeByLocation>\r
+         <!--Optional:-->\r
+         <web:Location>?</web:Location>\r
+      </web:GetAustralianPostCodeByLocation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/GetAustralianPostCodeByLocation"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="6982e3b8-7890-4b6a-9374-87c42e2d5950" wsaVersion="NONE" name="AustralianPostCodeSoap12" type="wsdl" bindingName="{http://www.webserviceX.NET}AustralianPostCodeSoap12" soapVersion="1_2" anonymous="optional" definition="http://www.webservicex.net/AustralianPostCode.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://www.webservicex.net/AustralianPostCode.asmx?WSDL"><con:part><con:url>http://www.webservicex.net/AustralianPostCode.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.webserviceX.NET" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.webserviceX.NET" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Australian Postcode ,Location Web service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.webserviceX.NET">
+      <s:element name="GetAustralianPostCodeByLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAustralianPostCodeByLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAustralianPostCodeByLocationResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAustralianLocationByPostCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAustralianLocationByPostCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAustralianLocationByPostCodeResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAustralianPostCodeByLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAustralianPostCodeByLocation"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianPostCodeByLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAustralianPostCodeByLocationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAustralianLocationByPostCode"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAustralianLocationByPostCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianPostCodeByLocationHttpGetIn">
+    <wsdl:part name="Location" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianPostCodeByLocationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeHttpGetIn">
+    <wsdl:part name="PostCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianPostCodeByLocationHttpPostIn">
+    <wsdl:part name="Location" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianPostCodeByLocationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeHttpPostIn">
+    <wsdl:part name="PostCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetAustralianLocationByPostCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:portType name="AustralianPostCodeSoap">
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <wsdl:documentation>Get Australian Postcode by partial / full Location Name</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianPostCodeByLocationSoapIn"/>
+      <wsdl:output message="tns:GetAustralianPostCodeByLocationSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <wsdl:documentation>Get Australian Location by partial / full Postcode</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianLocationByPostCodeSoapIn"/>
+      <wsdl:output message="tns:GetAustralianLocationByPostCodeSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AustralianPostCodeHttpGet">
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <wsdl:documentation>Get Australian Postcode by partial / full Location Name</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianPostCodeByLocationHttpGetIn"/>
+      <wsdl:output message="tns:GetAustralianPostCodeByLocationHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <wsdl:documentation>Get Australian Location by partial / full Postcode</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianLocationByPostCodeHttpGetIn"/>
+      <wsdl:output message="tns:GetAustralianLocationByPostCodeHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AustralianPostCodeHttpPost">
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <wsdl:documentation>Get Australian Postcode by partial / full Location Name</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianPostCodeByLocationHttpPostIn"/>
+      <wsdl:output message="tns:GetAustralianPostCodeByLocationHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <wsdl:documentation>Get Australian Location by partial / full Postcode</wsdl:documentation>
+      <wsdl:input message="tns:GetAustralianLocationByPostCodeHttpPostIn"/>
+      <wsdl:output message="tns:GetAustralianLocationByPostCodeHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AustralianPostCodeSoap" type="tns:AustralianPostCodeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <soap:operation soapAction="http://www.webserviceX.NET/GetAustralianPostCodeByLocation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <soap:operation soapAction="http://www.webserviceX.NET/GetAustralianLocationByPostCode" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AustralianPostCodeSoap12" type="tns:AustralianPostCodeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <soap12:operation soapAction="http://www.webserviceX.NET/GetAustralianPostCodeByLocation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <soap12:operation soapAction="http://www.webserviceX.NET/GetAustralianLocationByPostCode" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AustralianPostCodeHttpGet" type="tns:AustralianPostCodeHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <http:operation location="/GetAustralianPostCodeByLocation"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <http:operation location="/GetAustralianLocationByPostCode"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AustralianPostCodeHttpPost" type="tns:AustralianPostCodeHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="GetAustralianPostCodeByLocation">
+      <http:operation location="/GetAustralianPostCodeByLocation"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAustralianLocationByPostCode">
+      <http:operation location="/GetAustralianLocationByPostCode"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AustralianPostCode">
+    <wsdl:documentation>Australian Postcode ,Location Web service</wsdl:documentation>
+    <wsdl:port name="AustralianPostCodeSoap" binding="tns:AustralianPostCodeSoap">
+      <soap:address location="http://www.webservicex.net/AustralianPostCode.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="AustralianPostCodeSoap12" binding="tns:AustralianPostCodeSoap12">
+      <soap12:address location="http://www.webservicex.net/AustralianPostCode.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="AustralianPostCodeHttpGet" binding="tns:AustralianPostCodeHttpGet">
+      <http:address location="http://www.webservicex.net/AustralianPostCode.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="AustralianPostCodeHttpPost" binding="tns:AustralianPostCodeHttpPost">
+      <http:address location="http://www.webservicex.net/AustralianPostCode.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint></con:endpoints><con:operation id="fd0e864e-597a-4d14-b4c8-4229a6f2c4d8" isOneWay="false" action="http://www.webserviceX.NET/GetAustralianLocationByPostCode" name="GetAustralianLocationByPostCode" bindingOperationName="GetAustralianLocationByPostCode" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="98f6aea9-0186-45d7-a787-00c94521cb4a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webserviceX.NET">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <web:GetAustralianLocationByPostCode>\r
+         <!--Optional:-->\r
+         <web:PostCode>?</web:PostCode>\r
+      </web:GetAustralianLocationByPostCode>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/AustralianPostCodeSoap/GetAustralianLocationByPostCodeRequest"/></con:call></con:operation><con:operation id="d8395e2d-8fcd-485b-8cf5-a23566c2b692" isOneWay="false" action="http://www.webserviceX.NET/GetAustralianPostCodeByLocation" name="GetAustralianPostCodeByLocation" bindingOperationName="GetAustralianPostCodeByLocation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a97ac15a-b43f-4506-a5b7-3b1a47420712" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webserviceX.NET">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <web:GetAustralianPostCodeByLocation>\r
+         <!--Optional:-->\r
+         <web:Location>?</web:Location>\r
+      </web:GetAustralianPostCodeByLocation>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/AustralianPostCodeSoap/GetAustralianPostCodeByLocationRequest"/></con:call></con:operation></con:interface><con:testSuite id="7dbf0d51-3e53-4222-943b-0e7eb0aa1cdd" name="TestSuite: get postcode by location"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:testCase id="691032a1-f2a2-48a1-a1a5-a69808e888a6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase: get postcode by location (1, success only)" searchProperties="true"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="request" name="string: complete address" id="4ce64adf-2712-4af6-85f7-5859b35ac829"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AustralianPostCodeSoap</con:interface><con:operation>GetAustralianPostCodeByLocation</con:operation><con:request name="string: complete address" id="5c5b8f58-2a51-4d3d-8d9b-9c0b7e8c8ee3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetAustralianPostCodeByLocation>
+         <!--Optional:-->
+         <web:Location>Acton Park</web:Location>
+      </web:GetAustralianPostCodeByLocation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="13c3e17d-b6ba-4937-9e74-8164a66cd7fe"/><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains the correct postcode"><con:configuration><token>WA 6280</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="string: partial address 1" id="1b0c3283-b5b0-4da4-a5e0-d1129caa69fa"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AustralianPostCodeSoap</con:interface><con:operation>GetAustralianPostCodeByLocation</con:operation><con:request name="string: partial address 1" id="5c5b8f58-2a51-4d3d-8d9b-9c0b7e8c8ee3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetAustralianPostCodeByLocation>
+         <!--Optional:-->
+         <web:Location>Acton</web:Location>
+      </web:GetAustralianPostCodeByLocation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="13c3e17d-b6ba-4937-9e74-8164a66cd7fe"/><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains the correct postcode"><con:configuration><token>WA 6280</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script: change location in request" id="714bde61-f83b-4a6c-964e-678f2b63a24b"><con:settings/><con:config><script>def utils = new com.eviware.soapui.support.GroovyUtils(context)
+def request = utils.getXmlHolder("string: partial address 2#request")
+
+log.info(request.getNodeValue("//*:Location"))
+request.setNodeValue("//*:Location","Museum")
+log.info(request.getNodeValue("//*:Location"))
+
+
+request.updateProperty()
+testRunner.testCase.testSteps["string: partial address 2"].run(testRunner,context)
+</script></con:config></con:testStep><con:testStep type="request" name="string: partial address 2" id="a34b72de-bf82-4c08-9195-02694756dbad"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AustralianPostCodeSoap</con:interface><con:operation>GetAustralianPostCodeByLocation</con:operation><con:request name="string: partial address 2" id="5c5b8f58-2a51-4d3d-8d9b-9c0b7e8c8ee3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetAustralianPostCodeByLocation>
+         <!--Optional:-->
+         <web:Location>Museum</web:Location>
+      </web:GetAustralianPostCodeByLocation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="13c3e17d-b6ba-4937-9e74-8164a66cd7fe"/><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains the postcode before change" disabled="true"><con:configuration><token>WA 6280</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains the postcode after change"><con:configuration><token>TAS 7000</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="string: post code" id="0f116a83-1116-48b4-b0d4-c3ee3c14c874" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AustralianPostCodeSoap</con:interface><con:operation>GetAustralianPostCodeByLocation</con:operation><con:request name="string: post code" id="5c5b8f58-2a51-4d3d-8d9b-9c0b7e8c8ee3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetAustralianPostCodeByLocation>\r
+         <!--Optional:-->\r
+         <web:Location>WA 6280</web:Location>\r
+      </web:GetAustralianPostCodeByLocation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="13c3e17d-b6ba-4937-9e74-8164a66cd7fe"/><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains the correct postcode"><con:configuration><token>WA 6280</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="f403fbcc-3c52-471e-a8a4-81af2953e095" name="Contains the correct address"><con:configuration><token>Caton Park</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="string: random string" id="c76d0885-e582-4d19-b674-80bbdce9fa42"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AustralianPostCodeSoap</con:interface><con:operation>GetAustralianPostCodeByLocation</con:operation><con:request name="string: random string" id="5c5b8f58-2a51-4d3d-8d9b-9c0b7e8c8ee3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetAustralianPostCodeByLocation>\r
+         <!--Optional:-->\r
+         <web:Location>sdfasdgdasg</web:Location>\r
+      </web:GetAustralianPostCodeByLocation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="13c3e17d-b6ba-4937-9e74-8164a66cd7fe"/><con:assertion type="Simple NotContains" id="7aa1cb0f-f489-4bf9-b206-8b00be42cd1d" name="Not Contains any poscode"><con:configuration><token>&lt;PostCode></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="blank: blank" id="dd481107-0657-4e7e-b72d-eb10fca4426a"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AustralianPostCodeSoap</con:interface><con:operation>GetAustralianPostCodeByLocation</con:operation><con:request name="blank: blank" id="5c5b8f58-2a51-4d3d-8d9b-9c0b7e8c8ee3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetAustralianPostCodeByLocation>\r
+         <!--Optional:-->\r
+         <web:Location></web:Location>\r
+      </web:GetAustralianPostCodeByLocation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="13c3e17d-b6ba-4937-9e74-8164a66cd7fe"/><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains a valid postcode"><con:configuration><token>WA 6280</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains a valid address"><con:configuration><token>Courtenay</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase id="75b65e7a-63ce-46d0-a1b4-0259986465a6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase: get postcode by location (groovy)" searchProperties="true"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="request" name="string: complete address" id="352122f9-fef3-449d-a1b4-62b88c38a42e"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AustralianPostCodeSoap</con:interface><con:operation>GetAustralianPostCodeByLocation</con:operation><con:request name="string: complete address" id="5c5b8f58-2a51-4d3d-8d9b-9c0b7e8c8ee3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetAustralianPostCodeByLocation>\r
+         <!--Optional:-->\r
+         <web:Location>Acton Park</web:Location>\r
+      </web:GetAustralianPostCodeByLocation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="13c3e17d-b6ba-4937-9e74-8164a66cd7fe"/><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains the correct postcode"><con:configuration><token>WA 6280</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="string: partial address 1" id="33127f11-16a8-46bf-b4ee-d505515e48e4"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AustralianPostCodeSoap</con:interface><con:operation>GetAustralianPostCodeByLocation</con:operation><con:request name="string: partial address 1" id="5c5b8f58-2a51-4d3d-8d9b-9c0b7e8c8ee3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetAustralianPostCodeByLocation>\r
+         <!--Optional:-->\r
+         <web:Location>Acton</web:Location>\r
+      </web:GetAustralianPostCodeByLocation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="13c3e17d-b6ba-4937-9e74-8164a66cd7fe"/><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains the correct postcode"><con:configuration><token>WA 6280</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script: change location in request" id="ca54ab1b-88a8-4439-8160-6f113af8831d"><con:settings/><con:config><script>def utils = new com.eviware.soapui.support.GroovyUtils(context)
+def request = utils.getXmlHolder("string: partial address 2#request")
+
+log.info(request.getNodeValue("//*:Location"))
+request.setNodeValue("//*:Location","Museum")
+log.info(request.getNodeValue("//*:Location"))
+
+request.updateProperty()
+testRunner.testCase.testSteps["string: partial address 2"].run(testRunner,context)</script></con:config></con:testStep><con:testStep type="request" name="string: partial address 2" id="7aad06a8-c6fb-409a-b455-99558565dc42"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AustralianPostCodeSoap</con:interface><con:operation>GetAustralianPostCodeByLocation</con:operation><con:request name="string: partial address 2" id="5c5b8f58-2a51-4d3d-8d9b-9c0b7e8c8ee3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetAustralianPostCodeByLocation>
+         <!--Optional:-->
+         <web:Location>Park</web:Location>
+      </web:GetAustralianPostCodeByLocation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="13c3e17d-b6ba-4937-9e74-8164a66cd7fe"/><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains the postcode after change"><con:configuration><token>TAS 7000</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script: change location back" id="800df7e6-6bad-430d-b4d5-221bd8db7f91"><con:settings/><con:config><script>def utils = new com.eviware.soapui.support.GroovyUtils(context)
+def request = utils.getXmlHolder("string: partial address 2#request")
+
+log.info(request.getNodeValue("//*:Location"))
+request.setNodeValue("//*:Location","Park")
+log.info(request.getNodeValue("//*:Location"))
+
+request.updateProperty()
+testRunner.testCase.testSteps["string: partial address 2"].run(testRunner,context)</script></con:config></con:testStep><con:testStep type="request" name="string: random string" id="66bc1376-ba33-4058-b286-d2741392abd1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AustralianPostCodeSoap</con:interface><con:operation>GetAustralianPostCodeByLocation</con:operation><con:request name="string: random string" id="5c5b8f58-2a51-4d3d-8d9b-9c0b7e8c8ee3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetAustralianPostCodeByLocation>\r
+         <!--Optional:-->\r
+         <web:Location>sdfasdgdasg</web:Location>\r
+      </web:GetAustralianPostCodeByLocation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="13c3e17d-b6ba-4937-9e74-8164a66cd7fe"/><con:assertion type="Simple NotContains" id="7aa1cb0f-f489-4bf9-b206-8b00be42cd1d" name="Not Contains any poscode"><con:configuration><token>&lt;PostCode></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="blank: blank" id="f998e60f-0e00-4f44-a220-fa985f7adae4"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AustralianPostCodeSoap</con:interface><con:operation>GetAustralianPostCodeByLocation</con:operation><con:request name="blank: blank" id="5c5b8f58-2a51-4d3d-8d9b-9c0b7e8c8ee3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/AustralianPostCode.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetAustralianPostCodeByLocation>\r
+         <!--Optional:-->\r
+         <web:Location></web:Location>\r
+      </web:GetAustralianPostCodeByLocation>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="13c3e17d-b6ba-4937-9e74-8164a66cd7fe"/><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains a valid postcode"><con:configuration><token>WA 6280</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="9fa0b171-eadb-42bc-9dee-4f19932e39a7" name="Contains a valid address"><con:configuration><token>Courtenay</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:mockService id="01f4a68d-7165-44f2-a8d7-20e6cdcf6e16" port="8088" path="/mockAustralianPostCodeSoap" host="localhost" name="getlocationbypost MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:dataSources/><con:headerValidator/><con:mockOperation name="GetAustralianLocationByPostCode" id="e743fb3b-d40e-48f3-8c8a-d2b59ee64f00" interface="AustralianPostCodeSoap" operation="GetAustralianLocationByPostCode"><con:settings/><con:defaultResponse>Mock Response Correct Location</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchXPath/><con:routeScript/><con:response name="Mock Response Correct Location" id="a639b49b-e649-4ea3-97f3-eb6a6f222599" httpResponseStatus="200" encoding="UTF-8" dataSource=""><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetAustralianLocationByPostCodeResponse>
+         <!--Optional:-->
+         <web:GetAustralianLocationByPostCodeResult>Canberra</web:GetAustralianLocationByPostCodeResult>
+      </web:GetAustralianLocationByPostCodeResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/GetAustralianLocationByPostCode"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:savedRecentRuns>1</con:savedRecentRuns><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/><con:authRepository/><con:tags/></con:soapui-project>

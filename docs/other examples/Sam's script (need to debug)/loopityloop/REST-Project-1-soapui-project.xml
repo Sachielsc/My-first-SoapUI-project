@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="40db81ec-cf3b-485f-8e44-02b3303b0214" activeEnvironment="Default" name="REST Project 1" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="824fa86f-931f-4f52-9e6f-425200edcb8a" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://petstore.swagger.io" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://petstore.swagger.io</con:endpoint></con:endpoints><con:resource name="V2" path="/v2/user" id="1f4be792-11ea-4bd8-ada1-1775a000db76"><con:settings/><con:parameters/><con:method name="V2 1" id="98677853-85d3-4156-80f2-b9574c10dd29" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/xml</con:mediaType><con:status>405</con:status><con:params/><con:element>apiResponse</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:v2="http://petstore.swagger.io/v2">v2:Fault</con:element></con:representation><con:request name="Request 1" id="c4702607-babf-40c1-bdcf-585e739dddcc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request>{
+  "id": 0,
+  "username": "string",
+  "firstName": "string",
+  "lastName": "string",
+  "email": "string",
+  "password": "string",
+  "phone": "string",
+  "userStatus": 0
+}</con:request><con:originalUri>http://petstore.swagger.io/v2/user</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="inventory" path="v2/store/inventory" id="2b47e067-10ef-4060-ba71-05a01a44b6eb"><con:settings/><con:parameters/><con:method name="Method 1" id="84775176-d62e-47eb-a388-92bd3af527ff" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:inv="http://petstore.swagger.io/store/inventory">inv:Response</con:element></con:representation><con:request name="Request 1" id="fa606929-989f-4082-aee4-acc74dd62565" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request/><con:originalUri>http://petstore.swagger.io/store/inventory</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="findByStatus" path="/v2/pet/findByStatus" id="54c794bc-2ca3-40eb-82cf-173774f95454"><con:settings/><con:parameters><con:parameter><con:name>status</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="03c1f95d-07c7-4c83-a066-1c783998a261" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="b4c41e72-2638-4d23-ad4d-bc6d57b2dc06" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request/><con:originalUri>http://petstore.swagger.io/v2/pet/findByStatus</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="status" value="available" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>status</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="{username}" path="v2/user/{username}" id="80d3c7fc-c3f0-49c4-b3c8-e44eb045709d"><con:settings/><con:parameters><con:parameter><con:name>username</con:name><con:value>username</con:value><con:style>TEMPLATE</con:style><con:default>username</con:default></con:parameter></con:parameters><con:method name="Method 1" id="b53332af-3599-4817-9df0-99d7eb79e975" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:bob="http://petstore.swagger.io/user/bob">bob:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/xml</con:mediaType><con:status>405</con:status><con:params/><con:element>apiResponse</con:element></con:representation><con:request name="Request 1" id="4972a9d4-11fe-4e34-b9f0-27400ae6db96" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request/><con:originalUri>http://petstore.swagger.io/user/bob</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="username" value="user1" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource></con:interface><con:testSuite id="bf38a779-db06-415b-863a-5674b0275be7" name="tests"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="5bbbf162-cea8-4dde-8621-d3359583c534" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Createuser" searchProperties="true"><con:settings/><con:testStep type="groovy" name="data driver" id="5c10fe04-d3c1-4d17-b5b8-14916e153439"><con:settings/><con:config><script>// IMPORT THE LIBRARIES WE NEED
+import com.eviware.soapui.support.XmlHolder
+import jxl.*
+import jxl.write.*
+
+
+ 
+// DECLARE THE VARIABLES
+
+def myTestCase = context.testCase //myTestCase contains the test case
+ 
+def counter,next,previous,size,columns //Variables used to handle the loop and to move inside the file
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+def projectDir = groovyUtils.projectPath
+
+def filename= testRunner.testCase.testSuite.getPropertyValue("FileName")
+ 
+Workbook workbook1 = Workbook.getWorkbook(new File(projectDir+"/"+filename)) //file containing the data
+ 
+Sheet sheet1 = workbook1.getSheet(0) //save the first sheet in sheet1
+ 
+size= sheet1.getRows().toInteger() //get the number of rows, each row is a data set
+
+columns = sheet1.getColumns().toInteger() //number of columns
+ 
+propTestStep = myTestCase.getTestStepByName("Property-Loop") // get the Property TestStep object
+ 
+propTestStep.setPropertyValue("Total", size.toString())
+ 
+counter = propTestStep.getPropertyValue("Count").toString() //counter variable contains iteration number
+ 
+counter = counter.toInteger() //
+
+ 
+next = (counter > size-2? 0: counter+1) //set the next value
+
+
+//GET HEADERS
+
+def columnhead = []
+def n=  0
+while(columns!=n){
+
+Cell head = sheet1.getCell(n,0)//(column,row)
+header = head.getContents()
+columnhead.add(header)
+n++
+
+}
+log.info "HEADERS" + columnhead
+
+
+
+
+// OBTAINING THE DATA YOU NEED
+
+n = 1 
+col = 0
+def rowdata = []
+while(n!=size){
+	
+while (col!=columns){
+	
+Cell rdata = sheet1.getCell(col,counter)//(column,row) Top row 
+data	= rdata.getContents()
+rowdata.add(data)
+col++
+
+}
+n++
+
+
+	}
+
+log.info "ROWDATA" + rowdata
+
+workbook1.close() //close the file
+ 
+//Assigning the Property names and values 
+n = 0
+//
+while(n!=columns){
+testRunner.testCase.testSuite.setPropertyValue(columnhead[n],rowdata[n])
+n++
+ 
+}
+
+ 
+testRunner.testCase.testSuite.setPropertyValue("Count", next.toString()) //increase Count value
+  
+testRunner.testCase.testSuite.setPropertyValue("Next", next.toString()) //set Next value on the properties step
+ 
+//Decide if the test has to be run again or not
+ 
+if (counter == size-1)
+ 
+{
+testRunner.testCase.testSuite.setPropertyValue("StopLoop","T")
+//propTestStep.setPropertyValue("StopLoop", "T")
+ 
+log.info "Setting the stoploop property now..."
+
+testRunner.testCase.testSuite.setPropertyValue("Count","1")
+ 
+}
+ 
+else if (counter==0)
+ 
+{
+ 
+def runner = new com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner(testRunner.testCase, null)
+ testRunner.testCase.testSuite.setPropertyValue("StopLoop","F")
+//propTestStep.setPropertyValue("StopLoop", "F")
+ 
+}
+ 
+else
+ 
+{
+ 
+//propTestStep.setPropertyValue("StopLoop", "F")
+testRunner.testCase.testSuite.setPropertyValue("StopLoop","F")
+
+ 
+}
+ </script></con:config></con:testStep><con:testStep type="properties" name="Property-Loop" id="0b44c698-f7b9-4754-b398-83fd851419fa"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Total</con:name><con:value>7</con:value></con:property><con:property><con:name>Count</con:name><con:value>5</con:value></con:property><con:property><con:name>Next</con:name><con:value>5</con:value></con:property><con:property><con:name>StopLoop</con:name><con:value>F</con:value></con:property><con:property><con:name>id</con:name><con:value>789</con:value></con:property><con:property><con:name>username</con:name><con:value>"user15"</con:value></con:property><con:property><con:name>firstname</con:name><con:value>"bob"</con:value></con:property><con:property><con:name>lastname</con:name><con:value>"smith"</con:value></con:property><con:property><con:name>email</con:name><con:value>"user1mail.com"</con:value></con:property><con:property><con:name>password</con:name><con:value>"Password123"</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="loop" id="239b1e9e-58a7-4e65-9780-88ffe07c9769"><con:settings/><con:config><script>def myTestCase = context.testCase
+ 
+def runner
+ 
+propTestStep = myTestCase.getTestStepByName("Property-Loop") // get the Property TestStep
+
+endLoop = testRunner.testCase.testSuite.getPropertyValue("StopLoop").toString()
+ 
+if (endLoop.toString() == "T" || endLoop.toString()=="True" || endLoop.toString()=="true")
+ 
+{
+ 
+log.info ("Exit Groovy Data Source Looper")
+ 
+assert true
+ 
+}
+ 
+else
+ 
+{
+ 
+testRunner.gotoStepByName("data driver") //setStartStep
+ 
+}</script></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>FileName</con:name><con:value>Book3.xls</con:value></con:property><con:property><con:name>StopLoop</con:name><con:value>F</con:value></con:property><con:property><con:name>id</con:name><con:value>790</con:value></con:property><con:property><con:name>username</con:name><con:value>"user16"</con:value></con:property><con:property><con:name>firstname</con:name><con:value>"charles"</con:value></con:property><con:property><con:name>lastname</con:name><con:value>"shu"</con:value></con:property><con:property><con:name>email</con:name><con:value>"user1mail.com"</con:value></con:property><con:property><con:name>password</con:name><con:value>"Password123"</con:value></con:property><con:property><con:name>Count</con:name><con:value>6</con:value></con:property><con:property><con:name>Next</con:name><con:value>6</con:value></con:property></con:properties></con:testSuite><con:testSuite id="8ff858ae-d3bd-42d4-8bfe-0d12f5db0b5b" name="Tests"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6fff6a11-957d-42a1-a3b8-ffedc0ff2eb3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Createuser" searchProperties="true"><con:settings/><con:testStep type="groovy" name="data driver" id="e9c8e0ef-a07f-41a8-a26f-97aa8f953f67"><con:settings/><con:config><script>// IMPORT THE LIBRARIES WE NEED
+import com.eviware.soapui.support.XmlHolder
+import jxl.*
+import jxl.write.*
+
+
+ 
+// DECLARE THE VARIABLES
+
+def myTestCase = context.testCase //myTestCase contains the test case
+ 
+def counter,next,previous,size,columns //Variables used to handle the loop and to move inside the file
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+def projectDir = groovyUtils.projectPath
+
+def filename= testRunner.testCase.testSuite.getPropertyValue("FileName")
+ 
+Workbook workbook1 = Workbook.getWorkbook(new File(projectDir+"/"+filename)) //file containing the data
+ 
+Sheet sheet1 = workbook1.getSheet(0) //save the first sheet in sheet1
+ 
+size= sheet1.getRows().toInteger() //get the number of rows, each row is a data set
+
+columns = sheet1.getColumns().toInteger() //number of columns
+ 
+propTestStep = myTestCase.getTestStepByName("Property-Loop") // get the Property TestStep object
+ 
+propTestStep.setPropertyValue("Total", size.toString())
+ 
+counter = propTestStep.getPropertyValue("Count").toString() //counter variable contains iteration number
+ 
+counter = counter.toInteger() //
+
+ 
+next = (counter > size-2? 0: counter+1) //set the next value
+
+
+//GET HEADERS
+
+def columnhead = []
+def n=  0
+while(columns!=n){
+
+Cell head = sheet1.getCell(n,0)//(column,row)
+header = head.getContents()
+columnhead.add(header)
+n++
+
+}
+log.info "HEADERS" + columnhead
+
+
+
+
+// OBTAINING THE DATA YOU NEED
+
+n = 1 
+col = 0
+def rowdata = []
+while(n!=size){
+	
+while (col!=columns){
+	
+Cell rdata = sheet1.getCell(col,counter)//(column,row) Top row 
+data	= rdata.getContents()
+rowdata.add(data)
+col++
+
+}
+n++
+
+
+	}
+
+log.info "ROWDATA" + rowdata
+
+workbook1.close() //close the file
+ 
+//Assigning the Property names and values 
+n = 0
+//
+while(n!=columns){
+testRunner.testCase.testSuite.setPropertyValue(columnhead[n],rowdata[n])
+n++
+ 
+}
+
+ 
+testRunner.testCase.testSuite.setPropertyValue("Count", next.toString()) //increase Count value
+  
+testRunner.testCase.testSuite.setPropertyValue("Next", next.toString()) //set Next value on the properties step
+ 
+//Decide if the test has to be run again or not
+ 
+if (counter == size-1)
+ 
+{
+testRunner.testCase.testSuite.setPropertyValue("StopLoop","T")
+//propTestStep.setPropertyValue("StopLoop", "T")
+ 
+log.info "Setting the stoploop property now..."
+
+testRunner.testCase.testSuite.setPropertyValue("Count","1")
+ 
+}
+ 
+else if (counter==0)
+ 
+{
+ 
+def runner = new com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner(testRunner.testCase, null)
+ testRunner.testCase.testSuite.setPropertyValue("StopLoop","F")
+//propTestStep.setPropertyValue("StopLoop", "F")
+ 
+}
+ 
+else
+ 
+{
+ 
+//propTestStep.setPropertyValue("StopLoop", "F")
+testRunner.testCase.testSuite.setPropertyValue("StopLoop","F")
+
+ 
+}
+ </script></con:config></con:testStep><con:testStep type="properties" name="Property-Loop" id="df2cae49-fd48-47af-9f7a-4078329c8b4a"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Total</con:name><con:value>7</con:value></con:property><con:property><con:name>Count</con:name><con:value>1</con:value></con:property><con:property><con:name>Next</con:name><con:value>0</con:value></con:property><con:property><con:name>StopLoop</con:name><con:value>F</con:value></con:property><con:property><con:name>id</con:name><con:value>786</con:value></con:property><con:property><con:name>username</con:name><con:value>"user12"</con:value></con:property><con:property><con:name>firstname</con:name><con:value>"sam"</con:value></con:property><con:property><con:name>lastname</con:name><con:value>"marshall"</con:value></con:property><con:property><con:name>email</con:name><con:value>"user1mail.com"</con:value></con:property><con:property><con:name>password</con:name><con:value>"Password123"</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="loop" id="9c3839ec-f207-4d86-b09f-7f6b1654646c"><con:settings/><con:config><script>def myTestCase = context.testCase
+ 
+def runner
+ 
+propTestStep = myTestCase.getTestStepByName("Property-Loop") // get the Property TestStep
+
+endLoop = testRunner.testCase.testSuite.getPropertyValue("StopLoop").toString()
+ 
+if (endLoop.toString() == "T" || endLoop.toString()=="True" || endLoop.toString()=="true")
+ 
+{
+ 
+log.info ("Exit Groovy Data Source Looper")
+ 
+assert true
+ 
+}
+ 
+else
+ 
+{
+ 
+testRunner.gotoStepByName("data driver") //setStartStep
+ 
+}</script></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>FileName</con:name><con:value>Book3.xls</con:value></con:property><con:property><con:name>StopLoop</con:name><con:value>F</con:value></con:property><con:property><con:name>Total</con:name><con:value>7</con:value></con:property><con:property><con:name>Count</con:name><con:value>2</con:value></con:property><con:property><con:name>Next</con:name><con:value>2</con:value></con:property><con:property><con:name>id</con:name><con:value>786</con:value></con:property><con:property><con:name>username</con:name><con:value>"user12"</con:value></con:property><con:property><con:name>firstname</con:name><con:value>"sam"</con:value></con:property><con:property><con:name>lastname</con:name><con:value>"marshall"</con:value></con:property><con:property><con:name>email</con:name><con:value>"user1mail.com"</con:value></con:property><con:property><con:name>password</con:name><con:value>"Password123"</con:value></con:property></con:properties></con:testSuite><con:testSuite id="cd64d236-aa0f-4134-a438-4661b8c9cb66" name="orders"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="8b4969ce-b2e8-41a0-9053-e89425d229e5" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="inventory" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getinventory" id="5fa3d708-9776-4d9e-b20f-0ed60718b436"><con:settings/><con:config service="http://petstore.swagger.io" resourcePath="/v2/store/inventory" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getinventory" id="fa606929-989f-4082-aee4-acc74dd62565" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request/><con:originalUri>http://petstore.swagger.io/store/inventory</con:originalUri><con:assertion type="Simple Contains" id="10ab6462-c0d0-4770-b21e-e786201d5b11" name="Contains" disabled="true"><con:configuration><token>{"Content-Type":"application/json"}</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="07d1ae94-495b-4416-bd98-63849a081d94" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="fcab7ef0-38c8-4fdd-9c37-9d4f31e24445" name="JsonPath Match"><con:configuration/></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="fea6613e-b51b-4e90-a3c0-6b00d9d35c1f" name="pets"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="334933ed-69b7-45d3-a735-6a18c9c100f0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="pet status" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getpetbystatus" id="c1da6815-00e6-4a6d-8b17-b5c6fb330a9f"><con:settings/><con:config service="http://petstore.swagger.io" resourcePath="/v2/pet/findByStatus" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getpetbystatus" id="b4c41e72-2638-4d23-ad4d-bc6d57b2dc06" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request/><con:originalUri>http://petstore.swagger.io/v2/pet/findByStatus</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="b34aa685-fe50-4c6e-a082-f15777abb5a3" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="status" value="available" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>status</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite id="e52e6c84-4d78-444a-af60-d50cd4ecd6ff" name="users"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="378963d2-76bb-4f87-b33d-6ea87e613f39" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="createuser" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="createuser" id="2bc42d69-f9e1-4311-9fdb-959fe1d80413"><con:settings/><con:config service="http://petstore.swagger.io" resourcePath="/v2/user" methodName="V2 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="createuser" id="c4702607-babf-40c1-bdcf-585e739dddcc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://petstore.swagger.io</con:endpoint><con:request>{
+  "id": ${#TestSuite#id},
+  "username": ${#TestSuite#username},
+  "firstName": ${#TestSuite#firstname},
+  "lastName": ${#TestSuite#lastname},
+  "email": ${#TestSuite#email},
+  "password": ${#TestSuite#password},
+  "phone": "0800123456",
+  "userStatus": 0
+}</con:request><con:originalUri>http://petstore.swagger.io/v2/user</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="fd96f16d-bd6e-4906-a910-5f9463b69576" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="09ae4cfe-c7f8-4bbd-8597-4786b32d45a8"><con:settings/><con:config><script>log.info (testRunner.testCase.testSuite.getPropertyValue("username"))</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="4c36a58d-2b58-40e2-9708-8614fc0ad200" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="DataDriver" searchProperties="true"><con:settings/><con:testStep type="groovy" name="data driver" id="0d41b24b-6669-48a5-84eb-a99488ac2c1a"><con:settings/><con:config><script>// IMPORT THE LIBRARIES WE NEED
+import com.eviware.soapui.support.XmlHolder
+import jxl.*
+import jxl.write.*
+
+
+ 
+// DECLARE THE VARIABLES
+
+def myTestCase = context.testCase //myTestCase contains the test case
+ 
+def counter,next,previous,size,columns //Variables used to handle the loop and to move inside the file
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+
+def projectDir = groovyUtils.projectPath
+
+//project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("TEL")
+//testSuite = project.getTestSuiteByName("users");
+//testCase = testSuite.getTestCaseByName("Loop");
+
+def filename= testRunner.testCase.testSuite.getPropertyValue("FileName")
+ 
+Workbook workbook1 = Workbook.getWorkbook(new File(projectDir+"/"+filename)) //file containing the data
+ 
+Sheet sheet1 = workbook1.getSheet(0) //save the first sheet in sheet1
+ 
+size= sheet1.getRows().toInteger() //get the number of rows, each row is a data set
+
+columns = sheet1.getColumns().toInteger() //number of columns
+ 
+//propTestStep = myTestCase.getTestStepByName("Property-Loop") // get the Property TestStep object
+ 
+//propTestStep.setPropertyValue("Total", size.toString())
+//
+//testRunner.testCase.testSuite.setPropertyValue("Count","1")
+counter = testRunner.testCase.testSuite.getPropertyValue("Count").toString() //counter variable contains iteration number
+ 
+counter = counter.toInteger() //
+
+ 
+next = (counter > size-2? 0: counter+1) //set the next value
+
+
+//GET HEADERS
+
+def columnhead = []
+def n=  0
+while(columns!=n){
+
+Cell head = sheet1.getCell(n,0)//(column,row)
+header = head.getContents()
+columnhead.add(header)
+n++
+
+}
+log.info "HEADERS" + columnhead
+
+
+
+
+// OBTAINING THE DATA YOU NEED
+
+n = 1 
+col = 0
+def rowdata = []
+while(n!=size){
+	
+while (col!=columns){
+	
+Cell rdata = sheet1.getCell(col,counter)//(column,row) Top row 
+data	= rdata.getContents()
+rowdata.add(data)
+col++
+
+}
+n++
+
+
+	}
+
+log.info "ROWDATA" + rowdata
+
+workbook1.close() //close the file
+ 
+//Assigning the Property names and values 
+n = 0
+//
+while(n!=columns){
+testRunner.testCase.testSuite.setPropertyValue(columnhead[n],rowdata[n])
+n++
+ 
+}
+
+ 
+testRunner.testCase.testSuite.setPropertyValue("Count", next.toString()) //increase Count value
+  
+testRunner.testCase.testSuite.setPropertyValue("Next", next.toString()) //set Next value on the properties step
+ 
+//Decide if the test has to be run again or not
+ 
+if (counter == size-1)
+ 
+{
+
+testRunner.testCase.testSuite.setPropertyValue("StopLoop","T")
+log.info "Count" + counter 
+
+log.info "Setting the stoploop property now..."
+
+testRunner.testCase.testSuite.setPropertyValue("Count","1")
+ 
+}
+ 
+else if (counter==0)
+ 
+{
+
+log.info "Size -1: "+size
+log.info "Count" + counter 
+//def runner = new com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner(testRunner.testCase, null)
+ testRunner.testCase.testSuite.setPropertyValue("StopLoop","F")
+////propTestStep.setPropertyValue("StopLoop", "F")
+ 
+}
+ 
+else
+ 
+{
+	log.info "Size -1: "+size
+	log.info "Count" + counter 
+//def runner = new com.eviware.soapui.impl.wsdl.testcase.WsdlTestCaseRunner(testRunner.testCase, null)
+////propTestStep.setPropertyValue("StopLoop", "F")
+testRunner.testCase.testSuite.setPropertyValue("StopLoop","F")
+////runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false)
+ 
+}
+ </script></con:config></con:testStep><con:testStep type="properties" name="Property-Loop" id="abbc788b-e37c-4039-a77e-79ae96ca517f" disabled="true"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Total</con:name><con:value>7</con:value></con:property><con:property><con:name>Count</con:name><con:value>1</con:value></con:property><con:property><con:name>Next</con:name><con:value>6</con:value></con:property><con:property><con:name>StopLoop</con:name><con:value>F</con:value></con:property><con:property><con:name>id</con:name><con:value>790</con:value></con:property><con:property><con:name>username</con:name><con:value>"user16"</con:value></con:property><con:property><con:name>firstname</con:name><con:value>"charles"</con:value></con:property><con:property><con:name>lastname</con:name><con:value>"shu"</con:value></con:property><con:property><con:name>email</con:name><con:value>"user1mail.com"</con:value></con:property><con:property><con:name>password</con:name><con:value>"Password123"</con:value></con:property></con:properties></con:config></con:testStep><con:properties><con:property><con:name>FileName </con:name><con:value>Book3.xls</con:value></con:property></con:properties></con:testCase><con:testCase id="b13eab11-efb7-4e27-9f19-1d04debddef2" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Loop" searchProperties="true"><con:settings/><con:testStep type="groovy" name="loop" id="fca7365b-a922-41d4-aa9f-3e53abb10683"><con:settings/><con:config><script>def myTestCase = context.testCase
+ 
+def runner
+
+project = testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("REST Project 1")
+testSuite = project.getTestSuiteByName("users");
+//testCase = testSuite.getTestCaseByName("datarequestloop");
+testCase = testSuite.getTestCaseByName("datarequestloop");
+
+
+
+endLoop = testRunner.testCase.testSuite.getPropertyValue("StopLoop").toString()
+ 
+if (endLoop.toString() == "T" || endLoop.toString()=="True" || endLoop.toString()=="true")
+ 
+{
+log.info endLoop.toString()  
+log.info ("Exit Groovy Data Source Looper")
+log.info endLoop.toString() 
+
+ assert true
+}
+ 
+// if (endLoop.toString() == "F")
+else {
+
+runner = testCase.run(new com.eviware.soapui.support.types.StringToObjectMap(), false)
+log.info endLoop.toString()
+//testRunner.getTestCaseByName("datarequestloop")
+log.info "running data driver loop"
+
+}</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d6116b58-24d6-4ce0-a51c-617d7032e49b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="datarequestloop" searchProperties="true"><con:settings/><con:testStep type="groovy" name="start" id="2e659986-1660-48db-a975-8f629c31e078"><con:settings/><con:config><script>log.info "start of loop"</script></con:config></con:testStep><con:testStep type="calltestcase" name="datadriver" id="8ddcc35d-1234-4ec1-b5c4-0dca54f125cf"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>4c36a58d-2b58-40e2-9708-8614fc0ad200</con:targetTestCase><con:properties><con:property><con:name>FileName </con:name></con:property></con:properties><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="groovy" name="before" id="6eb79678-8bac-4dc6-876f-7c2a31853d58"><con:settings/><con:config><script>log.info "before create user"</script></con:config></con:testStep><con:testStep type="calltestcase" name="createuser" id="7a8d18df-6627-4724-9c1a-949ef14ffc73"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>378963d2-76bb-4f87-b33d-6ea87e613f39</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="groovy" name="after" id="73a201a4-b914-4800-af9d-285ba1ee9762"><con:settings/><con:config><script>log.info "after create user"</script></con:config></con:testStep><con:testStep type="calltestcase" name="loop" id="90c9d2ef-8f39-4150-b98e-630121209614"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>b13eab11-efb7-4e27-9f19-1d04debddef2</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="groovy" name="end" id="7b605d53-a3e1-4d9f-be9b-5abca996d001"><con:settings/><con:config><script>log.info "end of loop"
+
+</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7a955e60-07c6-4fc1-98ba-8ef05edc97d0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Copy of datarequestloop" searchProperties="true" disabled="true"><con:settings/><con:testStep type="groovy" name="start" id="abf8c7b5-6473-4ac9-9d38-6dc6c83db1a2"><con:settings/><con:config><script>log.info "start of loop"</script></con:config></con:testStep><con:testStep type="calltestcase" name="datadriver" id="23352324-00f2-4856-8b15-ee61e16f5900"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>4c36a58d-2b58-40e2-9708-8614fc0ad200</con:targetTestCase><con:properties><con:property><con:name>FileName </con:name></con:property></con:properties><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="groovy" name="before" id="e27902c7-10d5-4ba9-b969-64dd81fe5e63"><con:settings/><con:config><script>log.info "before create user"</script></con:config></con:testStep><con:testStep type="calltestcase" name="createuser" id="85872d33-92da-4f20-b5b6-d56000b4a7b6"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>378963d2-76bb-4f87-b33d-6ea87e613f39</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="groovy" name="after" id="2f0fed54-4654-40d5-a44c-83ba482592f4"><con:settings/><con:config><script>log.info "after create user"</script></con:config></con:testStep><con:testStep type="calltestcase" name="loop" id="2fe77ff8-ee2e-4294-9f2c-45638976c986"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>b13eab11-efb7-4e27-9f19-1d04debddef2</con:targetTestCase><con:properties/><con:returnProperties/><con:runMode>PARALLELL</con:runMode></con:config></con:testStep><con:testStep type="groovy" name="end" id="6ca0f732-48ff-40f9-a570-272b2ac3e57c"><con:settings/><con:config><script>log.info "end of loop"</script></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>FileName</con:name><con:value>createusers.xls</con:value></con:property><con:property><con:name>Next</con:name><con:value>0</con:value></con:property><con:property><con:name>StopLoop</con:name><con:value>T</con:value></con:property><con:property><con:name>id</con:name><con:value>791</con:value></con:property><con:property><con:name>username</con:name><con:value>"user17"</con:value></con:property><con:property><con:name>firstname</con:name><con:value>"monica"</con:value></con:property><con:property><con:name>lastname</con:name><con:value>"jung"</con:value></con:property><con:property><con:name>email</con:name><con:value>"user1mail.com"</con:value></con:property><con:property><con:name>password</con:name><con:value>"Password123"</con:value></con:property><con:property><con:name>Count</con:name><con:value>1</con:value></con:property></con:properties></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
